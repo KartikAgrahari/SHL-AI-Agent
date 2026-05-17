@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from agent import (
+from app.agent import (
     analyze_conversation,
     generate_reply
 )
-from retrieval import (
+from app.retrieval import (
     load_catalog,
     create_embeddings,
     build_faiss_index,
@@ -60,7 +60,7 @@ def chat(request: ChatRequest):
             "end_of_conversation": False
         }
     
-    
+
     # Follow-up clarification logic
     needs_clarification = False
 
